@@ -16,18 +16,47 @@ namespace DataStructures.Objects
         {
             var selectedNode = _Root;
 
-            while (value > selectedNode.GetValue() && selectedNode.HasRightChild() == true)
+            while (value <= selectedNode.GetValue() && selectedNode.HasLeftChild())
+            {
+                selectedNode = selectedNode.GetLeftChild();
+            }
+
+            while(value > selectedNode.GetValue() && selectedNode.HasRightChild())
             {
                 selectedNode = selectedNode.GetRightChild();
             }
 
-            if (value > selectedNode.GetValue())
+            if (value <= selectedNode.GetValue())
             {
-                selectedNode.AddRightChild(new BinaryTreeNode(value));
+                selectedNode.AddLeftChild(new BinaryTreeNode(value));
             }
             else
             {
-                selectedNode.AddLeftChild(new BinaryTreeNode(value));
+                selectedNode.AddRightChild(new BinaryTreeNode(value));
+            }
+        }
+
+        public int GetHeight()
+        {
+            return FindHeight(_Root);
+        }
+
+        private int FindHeight(BinaryTreeNode node)
+        {
+            if(node.GetLeftChild() == null && node.GetRightChild() == null)
+            {
+                return 1;
+            } 
+            else if(node.GetLeftChild() == null && node.GetRightChild() != null)
+            {
+                return FindHeight(node.GetRightChild()) + 1;
+            }
+            else if (node.GetRightChild() == null && node.GetLeftChild() != null)
+            {
+                return FindHeight(node.GetLeftChild()) + 1;
+            }
+            {
+                return Math.Max(FindHeight(node.GetLeftChild()), FindHeight(node.GetRightChild())) + 1;
             }
         }
     }
@@ -96,6 +125,15 @@ namespace DataStructures.Objects
         public void AddRightChild(BinaryTreeNode childNode)
         {
             _RightChild = childNode;
+        }
+
+        public override string ToString()
+        {
+            var stack = new Stack();
+
+
+
+            return base.ToString();
         }
     }
 }
