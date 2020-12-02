@@ -43,18 +43,11 @@ namespace DataStructures.Objects
 
         private int FindHeight(BinaryTreeNode node)
         {
-            if(node.GetLeftChild() == null && node.GetRightChild() == null)
+            if(node == null)
             {
-                return 1;
-            } 
-            else if(node.GetLeftChild() == null && node.GetRightChild() != null)
-            {
-                return FindHeight(node.GetRightChild()) + 1;
+                return -1;
             }
-            else if (node.GetRightChild() == null && node.GetLeftChild() != null)
-            {
-                return FindHeight(node.GetLeftChild()) + 1;
-            }
+            else
             {
                 return Math.Max(FindHeight(node.GetLeftChild()), FindHeight(node.GetRightChild())) + 1;
             }
