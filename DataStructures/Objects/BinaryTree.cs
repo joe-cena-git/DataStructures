@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.Libraries
+namespace DataStructures.Objects
 {
     // stores values in a sorted binary tree where all left nodes are less than or equal to parent
     public class BinaryTree

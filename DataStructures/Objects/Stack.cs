@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructures.Libraries
+namespace DataStructures.Objects
 {
     public class Stack
     {

@@ -1,11 +1,11 @@
 ﻿using System;
-using DataStructures.Libraries;
+using DataStructures.Objects;
 
-namespace DataStructures.LinkedListLibrary
+namespace DataStructures
 {
-    class LinkedListProgram
+    public class LinkedListProgram
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var data = new int[] { 4, 5, 6, 1, 2, 3, 4, 8, 5, 4, 2, 6, 8, 9, 5, 3, 12, 6, 4, 3, 2, 4, 6, 7, 8, 8, 4, 3, 2, 1, 5, 6, 78, 7, 5, 3, 22, 211 };
 

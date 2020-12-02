@@ -1,11 +1,11 @@
-﻿using DataStructures.Libraries;
+﻿using DataStructures.Objects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataStructures
 {
-    class BinaryTreeProgram
+    public class BinaryTreeProgram
     {
         public static void Main(string[] args)
         {

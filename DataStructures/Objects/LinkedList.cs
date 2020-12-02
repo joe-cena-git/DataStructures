@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructures.Libraries
+namespace DataStructures.Objects
 {
     public class LinkedList
     {
-        private BinaryTreeNode Head = null;
+        private LinkedListNode _Head = null;
 
         public LinkedList(object[] data)
         {
@@ -26,20 +26,20 @@ namespace DataStructures.Libraries
 
         public object GetFirst()
         {
-            return Head.GetData();
+            return _Head.GetData();
         }
 
         public void AddToEnd(object data)
         {
-            BinaryTreeNode newNode = new BinaryTreeNode(data);
+            var newNode = new LinkedListNode(data);
 
-            if(Head == null)
+            if(_Head == null)
             {
-                Head = newNode;
+                _Head = newNode;
             }
             else
             {
-                BinaryTreeNode selectedNode = Head;
+                LinkedListNode selectedNode = _Head;
 
                 while (selectedNode.HasNext())
                 {
@@ -52,14 +52,14 @@ namespace DataStructures.Libraries
 
         public void InsertAtFront(object data)
         {
-            BinaryTreeNode newHead = new BinaryTreeNode(data);
-            newHead.SetNextNode(Head);
-            Head = newHead;
+            var newHead = new LinkedListNode(data);
+            newHead.SetNextNode(_Head);
+            _Head = newHead;
         }
 
         public object[] GetAll()
         {
-            if(Head == null)
+            if(_Head == null)
             {
                 return null;
             }
@@ -69,7 +69,7 @@ namespace DataStructures.Libraries
 
                 var objects = new object[currentSize];
 
-                BinaryTreeNode selectedNode = Head;
+                LinkedListNode selectedNode = _Head;
 
                 for (int i = 0; i < currentSize; i++)
                 {
@@ -86,14 +86,14 @@ namespace DataStructures.Libraries
 
         public int GetSize()
         {
-            if(Head == null)
+            if(_Head == null)
             {
                 return 0;
             }
             else
             {
                 int size = 1;
-                BinaryTreeNode selectedNode = Head;
+                LinkedListNode selectedNode = _Head;
 
                 while (selectedNode.HasNext())
                 {
@@ -107,13 +107,13 @@ namespace DataStructures.Libraries
 
         public object GetLast()
         {
-            if(Head == null)
+            if(_Head == null)
             {
                 return null;
             }
             else
             {
-                BinaryTreeNode selectedNode = Head;
+                LinkedListNode selectedNode = _Head;
 
                 while (selectedNode.HasNext())
                 {
