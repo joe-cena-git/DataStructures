@@ -45,11 +45,38 @@ namespace DataStructures.Objects
         {
             if(node == null)
             {
-                return -1;
+                return 0;
             }
             else
             {
                 return Math.Max(FindHeight(node.GetLeftChild()), FindHeight(node.GetRightChild())) + 1;
+            }
+        }
+
+        public void PrintTree()
+        {
+            var height = GetHeight();
+            for(int i = 1; i <= height; i++)
+            {
+                PrintGivenLevel(_Root, i);
+            }
+            
+        }
+
+        private void PrintGivenLevel(BinaryTreeNode node, int level)
+        {
+            if (node == null)
+            {
+                return;
+            }
+            else if(level == 1)
+            {
+                Console.Write(node.GetValue() + " ");
+            }
+            else if(level > 1)
+            {
+                PrintGivenLevel(node.GetLeftChild(), level - 1);
+                PrintGivenLevel(node.GetRightChild(), level - 1);
             }
         }
     }
@@ -122,11 +149,7 @@ namespace DataStructures.Objects
 
         public override string ToString()
         {
-            var stack = new Stack();
-
-
-
-            return base.ToString();
+            return _Value.ToString();
         }
     }
 }

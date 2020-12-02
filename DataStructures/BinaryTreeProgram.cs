@@ -16,9 +16,10 @@ namespace DataStructures
             binaryTree.AddValue(4);
             binaryTree.AddValue(5);
 
-            Console.WriteLine(binaryTree.GetHeight());
+            Console.WriteLine("Height: " + binaryTree.GetHeight());
 
-            Console.Write(binaryTree);
+            Console.Write("Ordered: ");
+            binaryTree.PrintTree();
 
             Console.ReadKey();
         }
